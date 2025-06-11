@@ -56,7 +56,7 @@ After retrieving raw data, several steps are taken to prepare it for analysis:
 We explore various machine learning methods to group and analyze player behaviors, but the main one will be :
 
 - **Unsupervised Learning**:  
-  - Clustering techniques (k-Means) to identify behavior types  
+  - Clustering techniques (k-Means, EM) to identify behavior types  
   - Dimensionality reduction (PCA, t-SNE) for visualization
 
 We evaluate the models using scores, confusion matrices.
