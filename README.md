@@ -23,8 +23,6 @@ Key metrics include:
 The first step involves collecting data from a large number of players in order to design and train our models.  
 We use the official [Riot Games API](https://developer.riotgames.com/apis), which is freely accessible with an API key tied to a Riot Games account.
 
-⚠️ It's important to note that API requests are **rate-limited** — by default, you can only send **100 requests per 2 minutes**, and **20 requests per second** for most endpoints. Efficient request management and caching are essential.
-
 The API allows us to retrieve:
 - **Summoner IDs** and **PUUIDs** (unique player identifiers)  
 - **Match histories** (lists of match IDs)  
