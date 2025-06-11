@@ -21,9 +21,24 @@ for i in range (1,nb_pages):
         players_summonerId_list.append(player['summonerId'])
     time.sleep(1.3)
 
-# Summoner's ID saving
+puuid_list = []
+for ids in players_summonerId_list:
+    url = f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/{ids}"
+    user_data = requests.get(url, headers=headers).json()
+    user_puuid = user_data['puuid']
+    puuid_list.append(user_puuid)
+    time.sleep(1.3)
+
+# Summoner's IDs saving
 with open("../data/raw/summoner_ids.cvs", "w", newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     for id in players_summonerId_list:
         writer.writerow([id])
+
+# PUUID's IDs saving
+with open("../data/raw/puuid_ids.cvs", "w", newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    for id in puuid_list:
+        writer.writerow([id])
+
  

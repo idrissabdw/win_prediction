@@ -12,22 +12,13 @@ API_KEY = os.getenv("API_KEY")
 headers = {"X-Riot-Token": API_KEY}
 
 # Summoner's ID importation
-summoner_ids = []
+puuid_list = []
 region = "euw1"
-with open("../data/raw/summoner_ids.cvs", "r", encoding='utf-8') as f:
+with open("../data/raw/puuid_ids.cvs", "r", encoding='utf-8') as f:
     reader = csv.reader(f)
     for row in reader:
         if row:  # éviter les lignes vides
-            summoner_ids.append(row[0])
-
-# PUUID scrapping
-puuid_list = []
-for ids in summoner_ids:
-    url = f"https://{region}.api.riotgames.com/lol/summoner/v4/summoners/{ids}"
-    user_data = requests.get(url, headers=headers).json()
-    user_puuid = user_data['puuid']
-    puuid_list.append(user_puuid)
-    time.sleep(1.3)
+            puuid_list.append(row[0])
 
 # Games tracking & Featuring extraction
 player_metrics = []
@@ -43,6 +34,7 @@ for player_puuid in puuid_list:
     for i, match_id in enumerate(match_ids):
         match_url = f"https://{region}.api.riotgames.com/lol/match/v5/matches/{match_id}"
         match_data = requests.get(match_url, headers=headers).json()
+        print(match_data)
         time_game = match_data['info']['gameDuration']/60
         
         for p in match_data['info']['participants']:
