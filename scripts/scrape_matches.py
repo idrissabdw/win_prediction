@@ -30,6 +30,8 @@ for player_puuid in puuid_list:
     metrics = 8 # (KDA, CS/min, Gold/min, Damage/min, Damage taken/min, Vision Score, KP, Winrate  )
     stat_data = np.zeros((metrics,match_number))
 
+    time.sleep(1.5) # Respect the rate limit !
+
     # Featuring Extraction Algorithm 
     for i, match_id in enumerate(match_ids):
         match_url = f"https://{region}.api.riotgames.com/lol/match/v5/matches/{match_id}"
