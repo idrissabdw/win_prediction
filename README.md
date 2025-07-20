@@ -1,11 +1,12 @@
 # Player Behaviour Profiling
 
-This project aims to highlight the profile of a League of Legends player based on their in-game performances.
+This project aims to highlight the profile of a League of Legends player based on their in-game performances in order to predict the winrate of players.
 
 ## Goal
 
-The goal of this project is to use machine learning techniques to identify and categorize typical player behaviors based on in-game statistics.  
+First, we will use statistical or machine learning techniques to identify and categorize typical player behaviors based on in-game statistic by clustering.
 By analyzing various performance indicators, we aim to detect patterns that reflect different playstyles and strategic tendencies among players.
+In the other hand, the main goal is to predict the winrate of players with machine learning techniques with the same metrics.
 
 Key metrics include:
 - KDA (Kill/Death/Assist ratio)  
@@ -13,8 +14,7 @@ Key metrics include:
 - Gold generated per minute  
 - Damage dealt and received  
 - Vision score  
-- Objectives participation  
-- And more...
+- Kill participation
 
 ---
 
@@ -49,15 +49,18 @@ After retrieving raw data, several steps are taken to prepare it for analysis:
 
 ---
 
-## III. Modelling
+## III. Clustering
 
-We explore various machine learning methods to group and analyze player behaviors, but the main one will be :
+We explore various methods to group and analyze player behaviors, but the main one will be :
 
-- **Unsupervised Learning**:  
-  - Clustering techniques (k-Means, EM) to identify behavior types  
-  - Dimensionality reduction (PCA, t-SNE) for visualization
+- **Unsupervised Machine Learning methods**:  
+  - K-Means, Expectation Maximization
+- **Statistical methods**:  
+  - Hierachical Clustering (Dendogramme)
+ 
+## IV. Machine learning
 
-We evaluate the models using scores, confusion matrices.
+...
 
 ---
 
