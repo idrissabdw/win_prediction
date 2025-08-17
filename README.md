@@ -1,4 +1,4 @@
-# Player Behaviour Profiling
+# Win prediction - League of Legends
 
 This project aims to highlight the profile of a League of Legends player based on their in-game performances in order to predict the winrate of players.
 
