@@ -13,7 +13,7 @@ headers = {"X-Riot-Token": API_KEY}
 # Player scraping algorithm
 players_summonerId_list = []
 region = "euw1"
-nb_pages = 6
+nb_pages = 20
 for i in range (1,nb_pages):
     url = f'https://{region}.api.riotgames.com/lol/league/v4/entries/RANKED_SOLO_5x5/EMERALD/I?page={i}'
     users_data = requests.get(url, headers=headers).json()
